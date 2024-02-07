@@ -17,13 +17,13 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    'gradlew assembleDebugSources'
+                    'gradlew assembleDebug'
                 }
             }
         }
         stage('Archive') {
             steps {
-                archiveArtifacts "**/*.*"
+                archiveArtifacts "**/*.apk"
             }
         }
         stage('Approval') {
