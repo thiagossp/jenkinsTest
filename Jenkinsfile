@@ -7,6 +7,13 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('Build') {
+            steps {
+                script {
+                    sh './gradlew compileDebugSources'
+                }
+            }
+        }
         stage('Approval') {
             steps {
                 script {
