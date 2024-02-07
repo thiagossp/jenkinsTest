@@ -7,11 +7,23 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Build') {
+        stage('Compile') {
             steps {
                 script {
                     'gradlew compileDebugSources'
                 }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    'gradlew assembleDebugSources'
+                }
+            }
+        }
+        stage('Archive') {
+            steps {
+                archiveArtifacts "**/*.apk"
             }
         }
         stage('Approval') {
