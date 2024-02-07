@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts "**/*.apk"
+                archiveArtifacts "**/app-debug.apk"
             }
         }
         stage('Approval') {
