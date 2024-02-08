@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts "**/*.apk"
+                archiveArtifacts "build/**/*.apk"
             }
         }
         stage('Approval') {
