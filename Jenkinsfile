@@ -11,20 +11,20 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    'gradlew clean compileDebugSources'
+                    bat 'gradlew.bat clean compileDebugSources'
                 }
             }
         }
         stage('Build') {
             steps {
                 script {
-                    'gradlew clean assembleDebug'
+                    bat 'gradlew.bat clean assembleDebug'
                 }
             }
         }
         stage('Archive') {
             steps {
-                archiveArtifacts "**/*.apk"
+                archiveArtifacts '**/build/outputs/**/*.apk'
             }
         }
         stage('Approval') {
