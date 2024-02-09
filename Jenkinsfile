@@ -10,16 +10,7 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                script {
-                    bat 'gradlew.bat clean compileDebugSources'
-                }
-            }
-        }
-        stage('Build') {
-            steps {
-                script {
-                    bat 'gradlew.bat clean assembleDebug'
-                }
+                bat 'gradlew.bat clean compileDebugSources'
             }
         }
         stage('Archive') {
