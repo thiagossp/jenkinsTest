@@ -11,14 +11,14 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    'gradlew clear compileDebugSources'
+                    'gradlew clean compileDebugSources'
                 }
             }
         }
         stage('Build') {
             steps {
                 script {
-                    'gradlew clear assembleDebug'
+                    'gradlew clean assembleDebug'
                 }
             }
         }
